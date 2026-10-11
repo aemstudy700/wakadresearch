@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700">
+  <defs>
+    <!-- Define the checkered gray tiles pattern -->
+    <pattern id="gray-tile" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#D3D3D3"/>
+      <rect x="40" width="40" height="40" fill="#A9A9A9"/>
+      <rect y="40" width="40" height="40" fill="#A9A9A9"/>
+      <rect x="40" y="40" width="40" height="40" fill="#D3D3D3"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Base Tile Layer -->
+  <rect width="100%" height="100%" fill="url(#gray-tile)" />
+
+  <!-- Center Text Watermark Layer -->
+  <text x="50%" y="50%" 
+        dominant-baseline="middle" 
+        text-anchor="middle" 
+        font-family="Arial, sans-serif" 
+        font-size="56px" 
+        font-weight="bold" 
+        fill="rgba(0, 0, 0, 0.55)">
+    1400x700.svg
+  </text>
+</svg>

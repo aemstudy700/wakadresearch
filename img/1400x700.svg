@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" width="1400" height="700">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0288d1" />
+      <stop offset="60%" stop-color="#00b0ff" />
+      <stop offset="100%" stop-color="#40c4ff" />
+    </linearGradient>
+
+    <!-- Glow Filter for Bulb -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Intense Inner Glow for Bulb -->
+    <filter id="intenseGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60" result="blur1" />
+      <feGaussianBlur stdDeviation="20" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Hexagon Path Definition -->
+    <!-- Side length = 60, width = 104, height = 120 -->
+    <g id="hex">
+      <polygon points="0,-60 52,-30 52,30 0,60 -52,30 -52,-30" 
+               fill="#ffffff" stroke="#00e5ff" stroke-width="8" stroke-linejoin="round"/>
+    </g>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="1400" height="700" fill="url(#bgGrad)" />
+
+  <!-- Background Decorative Lines (Antenna style) -->
+  <path d="M 600,100 L 520,0" stroke="#01579b" stroke-width="3" opacity="0.4" stroke-dasharray="5,5" />
+  <circle cx="600" cy="100" r="5" fill="#01579b" opacity="0.4" />
+  <path d="M 750,100 L 830,0" stroke="#01579b" stroke-width="3" opacity="0.4" stroke-dasharray="5,5" />
+  <circle cx="750" cy="100" r="5" fill="#01579b" opacity="0.4" />
+
+  <!-- Connection Lines (Main Flow) -->
+  <path d="M 150,380 L 350,380" stroke="#00e5ff" stroke-width="6" />
+  <path d="M 870,380 L 980,380" stroke="#00e5ff" stroke-width="6" />
+
+  <!-- Left Side: Power Outlet and Plug -->
+  <g transform="translate(100, 300)">
+    <!-- Vertical Wall Socket Panel -->
+    <rect x="0" y="0" width="80" height="160" rx="15" fill="#ffffff" filter="drop-shadow(2px 4px 6px rgba(0,0,0,0.15))" />
+    
+    <!-- Top Outlet Holes -->
+    <rect x="25" y="30" width="30" height="30" rx="5" fill="#e0e0e0" />
+    <circle cx="34" cy="45" r="4" fill="#333" />
+    <circle cx="46" cy="45" r="4" fill="#333" />
+    <path d="M 32,52 L 48,52" stroke="#333" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- Bottom Outlet Holes (with plug inserted) -->
+    <rect x="25" y="90" width="30" height="30" rx="5" fill="#e0e0e0" />
+    
+    <!-- Power Cord and Plug Black Body -->
+    <path d="M 50,105 L 115,105" stroke="#212121" stroke-width="26" stroke-linecap="round" />
+    <rect x="50" y="85" width="40" height="40" rx="4" fill="#212121" />
+    <!-- Ridge details on plug -->
+    <line x1="60" y1="85" x2="60" y2="125" stroke="#424242" stroke-width="2" />
+    <line x1="70" y1="85" x2="70" y2="125" stroke="#424242" stroke-width="2" />
+    <line x1="80" y1="85" x2="80" y2="125" stroke="#424242" stroke-width="2" />
+  </g>
+
+  <!-- Central Cluster: Hexagon Grid with Concept Icons -->
+  <!-- Center reference around (600, 380) -->
+  
+  <!-- Column 1 (X=350, Y=380) -->
+  <use href="#hex" x="350" y="380" />
+  <!-- Icon: Glasses and Book (Education / Knowledge) -->
+  <g transform="translate(350, 380) scale(0.9)" stroke="#546e7a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="-18" cy="-10" r="12" />
+    <circle cx="18" cy="-10" r="12" />
+    <path d="M -6,-10 L 6,-10" />
+    <path d="M -30,-10 C -30,-25 -20,-25 -20,-25" />
+    <path d="M 30,-10 C 30,-25 20,-25 20,-25" />
+    <!-- Book lines underneath -->
+    <path d="M -30,15 L 30,15" stroke-width="5" />
+    <path d="M -30,23 L 30,23" stroke-width="3" />
+  </g>
+
+  <!-- Column 2 Top (X=455, Y=290) -->
+  <use href="#hex" x="455" y="290" />
+  <!-- Icon: Gears (Process / Settings) -->
+  <g transform="translate(455, 290) scale(0.85)" fill="#546e7a">
+    <!-- Big Gear -->
+    <path d="M0,-20 L3,-20 L5,-15 L10,-17 L12,-14 L7,-10 L10,-5 L15,-5 L15,-1 L10,1 L8,7 L12,11 L10,14 L5,11 L1,14 L1,19 L-3,19 L-3,14 L-7,12 L-12,15 L-14,12 L-10,8 L-13,3 L-18,2 L-18,-2 L-13,-3 L-11,-8 L-15,-12 L-13,-15 L-8,-11 L-3,-14 L-3,-20 Z M0,-6 A6,6 0 1,0 0,6 A6,6 0 1,0 0,-6 Z" transform="translate(-10,-5) rotate(15)" />
+    <!-- Small Gear -->
+    <path d="M0,-14 L2,-14 L3,-10 L7,-11 L8,-9 L5,-6 L7,-3 L10,-3 L10,-1 L7,1 L6,5 L9,8 L8,10 L5,8 L2,10 L2,13 L-2,13 L-2,10 L-5,8 L-8,10 L-9,8 L-6,5 L-7,1 L-10,1 L-10,-1 L-7,-3 L-6,-6 L-9,-8 L-8,-10 L-5,-8 L-2,-10 L-2,-14 Z M0,-4 A4,4 0 1,0 0,4 A4,4 0 1,0 0,-4 Z" transform="translate(15,15) rotate(5)" />
+  </g>
+
+  <!-- Column 2 Bottom (X=455, Y=470) -->
+  <use href="#hex" x="455" y="470" />
+  <!-- Icon: Graduation Cap / Student -->
+  <g transform="translate(455, 470) scale(0.9)" fill="#455a64">
+    <!-- Cap -->
+    <polygon points="0,-25 30,-13 0,-1 30,-13" transform="translate(0, -5)" />
+    <polygon points="0,-25 0,-1 -30,-13 Z" transform="translate(0, -5)" fill="#37474f" />
+    <rect x="-12" y="-12" width="24" height="10" fill="#455a64" />
+    <!-- Tassel -->
+    <path d="M 20,-15 L 25,-2 L 25,5" stroke="#37474f" stroke-width="2" fill="none" />
+    <!-- User shoulders/head profile -->
+    <circle cx="0" cy="12" r="10" />
+    <path d="M -22,32 C -22,22 -10,22 0,22 C 10,22 22,22 22,32 Z" />
+    <!-- Tie detail -->
+    <polygon points="0,22 -4,28 0,34 4,28" fill="#ffffff" />
+  </g>
+
+  <!-- Column 3 Top (X=560, Y=200) -->
+  <use href="#hex" x="560" y="200" />
+  <!-- Icon: Search / Magnifying Glass -->
+  <g transform="translate(560, 200) scale(0.9)" stroke="#455a64" stroke-width="6" fill="none" stroke-linecap="round">
+    <circle cx="-5" cy="-5" r="15" />
+    <line x1="6" y1="6" x2="22" y2="22" stroke-width="8" />
+  </g>
+
+  <!-- Column 3 Middle (X=560, Y=380) -->
+  <use href="#hex" x="560" y="380" />
+  <!-- Icon: Document / Report -->
+  <g transform="translate(560, 380) scale(0.9)" fill="#546e7a">
+    <rect x="-20" y="-28" width="40" height="56" rx="4" fill="none" stroke="#546e7a" stroke-width="5" />
+    <!-- Lines in document -->
+    <line x1="-12" y1="-14" x2="12" y2="-14" stroke="#546e7a" stroke-width="4" stroke-linecap="round" />
+    <line x1="-12" y1="-4" x2="12" y2="-4" stroke="#546e7a" stroke-width="4" stroke-linecap="round" />
+    <line x1="-12" y1="6" x2="4" y2="6" stroke="#546e7a" stroke-width="4" stroke-linecap="round" />
+    <line x1="-12" y1="16" x2="8" y2="16" stroke="#546e7a" stroke-width="4" stroke-linecap="round" />
+    <!-- Folded corner effect or badge -->
+    <polygon points="12,28 20,20 20,28" />
+  </g>
+
+  <!-- Column 4 Top (X=665, Y=290) -->
+  <use href="#hex" x="665" y="290" />
+  <!-- Icon: Bar Chart Trend -->
+  <g transform="translate(665, 290) scale(0.9)" stroke="#546e7a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="-24" y1="22" x2="24" y2="22" stroke-width="4" />
+    <rect x="-20" y="6" width="8" height="16" fill="#546e7a" stroke="none" />
+    <rect x="-8" y="-4" width="8" height="26" fill="#546e7a" stroke="none" />
+    <rect x="4" y="-14" width="8" height="36" fill="#546e7a" stroke="none" />
+    <path d="M -16,2 L -4,-8 L 8,-18 L 22,-20" stroke="#b0bec5" stroke-width="4" />
+    <circle cx="22" cy="-20" r="3" fill="#b0bec5" />
+  </g>
+
+  <!-- Column 4 Bottom (X=665, Y=470) -->
+  <use href="#hex" x="665" y="470" />
+  <!-- Icon: Balance Scale (Law / Science) -->
+  <g transform="translate(665, 470) scale(0.85)" stroke="#546e7a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Center Pillar -->
+    <line x1="0" y1="-25" x2="0" y2="25" />
+    <line x1="-15" y1="25" x2="15" y2="25" stroke-width="6" />
+    <!-- Beam -->
+    <line x1="-30" y1="-15" x2="30" y2="-15" stroke-width="6" />
+    <!-- Left Scale -->
+    <line x1="-30" y1="-15" x2="-42" y2="5" stroke-width="3" />
+    <line x1="-30" y1="-15" x2="-18" y2="5" stroke-width="3" />
+    <path d="M -45,5 C -45,18 -15,18 -15,5 Z" fill="#b0bec5" stroke="none" />
+    <!-- Right Scale -->
+    <line x1="30" y1="-15" x2="18" y2="5" stroke-width="3" />
+    <line x1="30" y1="-15" x2="42" y2="5" stroke-width="3" />
+    <path d="M 15,5 C 15,18 45,18 45,5 Z" fill="#b0bec5" stroke="none" />
+  </g>
+
+  <!-- Column 5 (X=770, Y=380) -->
+  <use href="#hex" x="770" y="380" />
+  <!-- Icon: Lightbulb Idea Silhouette inside -->
+  <g transform="translate(770, 380) scale(0.9)" fill="#546e7a">
+    <path d="M 0,-24 C -12,-24 -20,-15 -20,-4 C -20,4 -14,9 -11,14 L -11,20 L 11,20 L 11,14 C 14,9 20,4 20,-4 C 20,-15 12,-24 0,-24 Z" />
+    <rect x="-8" y="22" width="16" height="4" rx="2" fill="#37474f" />
+    <rect x="-5" y="28" width="10" height="3" rx="1" fill="#37474f" />
+  </g>
+
+  <!-- Right Side: Glowing Giant Lightbulb -->
+  <!-- Bulb Core Center at (1150, 380) -->
+  
+  <!-- Outer Glow Radiance Layer -->
+  <circle cx="1180" cy="380" r="220" fill="#ffffff" opacity="0.15" filter="url(#intenseGlow)" />
+  <circle cx="1180" cy="380" r="140" fill="#ffffff" opacity="0.25" filter="url(#glow)" />
+
+  <g transform="translate(950, 380)">
+    <!-- Bulb Base/Screw -->
+    <!-- Metallic threads connects to the line -->
+    <rect x="0" y="-35" width="25" height="70" rx="5" fill="#90a4ae" stroke="#37474f" stroke-width="3" />
+    <path d="M 25,-40 C 25,-40 35,-45 45,-45 L 45,45 C 35,45 25,40 25,40 Z" fill="#b0bec5" stroke="#37474f" stroke-width="3" />
+    
+    <!-- Thread ridges -->
+    <line x1="8" y1="-35" x2="8" y2="35" stroke="#cfd8dc" stroke-width="4" />
+    <line x1="16" y1="-35" x2="16" y2="35" stroke="#cfd8dc" stroke-width="4" />
+    
+    <!-- Black contact point -->
+    <path d="M 0,-25 C -8,-25 -12,-15 -12,0 C -12,15 -8,25 0,25 Z" fill="#212121" />
+
+    <!-- Glass Body Outline -->
+    <!-- Center of bulb sphere is at X=180, Y=0, Radius=110 -->
+    <path d="M 45,-43 
+             C 80,-43 90,-75 120,-95
+             C 150,-115 210,-115 250,-75
+             C 290,-35 290,35 250,75
+             C 210,115 150,115 120,95
+             C 90,75 45,43 45,43" 
+          fill="#ffffff" fill-opacity="0.2" stroke="#ffffff" stroke-width="6" filter="url(#glow)" />
+          
+    <path d="M 45,-43 
+             C 80,-43 90,-75 120,-95
+             C 150,-115 210,-115 250,-75
+             C 290,-35 290,35 250,75
+             C 210,115 150,115 120,95
+             C 90,75 45,43 45,43" 
+          fill="none" stroke="#ffffff" stroke-width="3" opacity="0.8" />
+
+    <!-- Filament Supports -->
+    <line x1="45" y1="-15" x2="130" y2="-20" stroke="#cfd8dc" stroke-width="3" />
+    <line x1="45" y1="15" x2="130" y2="20" stroke="#cfd8dc" stroke-width="3" />
+    <line x1="130" y1="-20" x2="150" y2="-35" stroke="#ffeb3b" stroke-width="2" />
+    <line x1="130" y1="20" x2="150" y2="35" stroke="#ffeb3b" stroke-width="2" />
+
+    <!-- Glowing Filament structure -->
+    <path d="M 150,-35 L 230,-45 L 210,0 L 230,45 L 150,35" fill="none" stroke="#ffee58" stroke-width="5" stroke-linejoin="round" filter="url(#glow)" />
+    <path d="M 150,-35 L 230,-45 L 210,0 L 230,45 L 150,35" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" />
+    
+    <!-- Inner bright highlight rays -->
+    <path d="M 210,-20 L 250,-30 M 220,0 L 265,0 M 210,20 L 250,30" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.7" />
+  </g>
+
+</svg>

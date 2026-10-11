@@ -1,0 +1,10 @@
+# Ignore a specific folder named "node_modules"
+node_modules/
+junk/
+
+
+# Ignore a folder named "build" at the root level
+/build/
+
+# Ignore all folders named "logs" anywhere in the project
+**/logs/
